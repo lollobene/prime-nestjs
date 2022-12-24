@@ -5,6 +5,7 @@ import { UsersDTO } from 'src/users/dto/create-user.dto';
 import { validate } from 'class-validator';
 import { LoggerService } from 'src/logger/logger.service';
 import { UsersService } from 'src/users/users.service';
+import { UsersLoginDTO } from 'src/users/dto/login-user.dto';
 
 @Injectable()
 export class AuthService {
@@ -19,7 +20,7 @@ export class AuthService {
     let isOk = false;
 
     // Transform body into DTO
-    const userDTO = new UsersDTO();
+    const userDTO = new UsersLoginDTO();
     userDTO.email = user.email;
     userDTO.password = user.password;
 
@@ -35,7 +36,7 @@ export class AuthService {
 
     if (isOk) {
       // Get user information
-      const userDetails = await this.userservice.findOne(user.email);
+      const userDetails = await this.userservice.findOneByMail(user.email);
 
       // Check if user exists
       if (userDetails == null) {
@@ -51,6 +52,7 @@ export class AuthService {
           msg: {
             email: user.email,
             access_token: this.jwtService.sign({ email: user.email }),
+            id: userDetails.id,
           },
         };
       } else {
@@ -71,6 +73,10 @@ export class AuthService {
     userDTO.email = body.email;
     userDTO.name = body.name;
     userDTO.password = hashSync(body.password, 10);
+    userDTO.avatar = body.avatar;
+    userDTO.username = body.username;
+    userDTO.description = body.description;
+    userDTO.secretKey = body.secretKey;
 
     // Validate DTO against validate function from class-validator
     await validate(userDTO).then((errors) => {
