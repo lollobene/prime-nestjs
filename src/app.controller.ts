@@ -25,10 +25,17 @@ export class AppController {
     res.status(200).json(body);
   }
 
-  @Get('/premium-echo')
+  @Get('/player-echo')
   @UseGuards(JwtAuthGuard, RolesGuard)
-  @Roles(Role.premium)
-  getPremiumEcho(@Req() req, @Res() res, @Body() body) {
+  @Roles(Role.player)
+  getPlayerEcho(@Req() req, @Res() res, @Body() body) {
+    res.status(200).json(body);
+  }
+
+  @Get('/admin-echo')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles(Role.admin)
+  getAdminEcho(@Req() req, @Res() res, @Body() body) {
     res.status(200).json(body);
   }
 }
