@@ -1,7 +1,3 @@
-<p align="left">
-  <img src="./showcase/prime-nestjs.jpg" width="500" alt="prime-nestjs">
-</p>
-
 Introducing the NestJS boilerplate, a comprehensive and modular starting point for your next Node.js project! Built with the latest version of NestJS, a powerful and flexible framework for building efficient and scalable server-side applications, this boilerplate includes support for TypeScript, PostgreSQL, and JWT authentication out of the box. Other features include configuration support with Dotenv, RBAC and CBAC for authorization, TypeORM for database interactions, Swagger for API documentation, and Docker Compose for container orchestration. Additionally, the boilerplate comes with pre-configured linting tools and secure HTTP headers with Helmet. Simply clone the repository, install the dependencies, and start building your next great idea!
 
 ## Out-of-box Solutions
@@ -19,7 +15,7 @@ Introducing the NestJS boilerplate, a comprehensive and modular starting point f
 - 📃 **Swagger** - API Documentation
 - 🐳 **Docker Compose** - Container Orchestration
 - 🔐 **Helmet** - secure HTTP headers
-- 😴 **Insomnia** - Insomnia config for endpoints
+- 🕹️ **Postman** - Postman config for endpoints
 - 📏 **ESLint** — Pluggable JavaScript linter
 - 💖 **Prettier** - Opinionated Code Formatter
 - ✨ **Commitlint** - Lint your conventional commits
@@ -100,20 +96,3 @@ awk 'NF {sub(/\r/, ""); printf "%s\\n",$0;}' public_key.pem
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
-
-<!-- ## 🌸 Built with template -->
-
----
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-
-<table>
-  <tr>
-    <td align="center"><a href="https://joeygoksu.com"><img src="https://avatars.githubusercontent.com/u/6523823?v=3?s=100" width="100px;" alt=""/><br /><sub><b>Joey Goksu</b></sub></a><br />
-    <a href="https://joeygoksu.com/aboutme" title="About me">📖</a>
-    </td>
-</table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-Made with ♥ by <a href="https://joeygoksu.com/">Joey Göksu</a>
