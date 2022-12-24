@@ -1,0 +1,2340 @@
+{
+	"info": {
+		"_postman_id": "24a7bc15-9ca7-4093-aed7-78da8487abe3",
+		"name": "prime-nestjs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2690750"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "LOGIN ADMIN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();",
+									"",
+									"pm.environment.set(\"admin_token\", response.access_token);",
+									"pm.environment.set(\"admin_id\", response.id);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"lorenzo.benetollo@gmail.com\",\n    \"password\": \"example123123\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LOGIN ADMIN",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"lorenzo.benetollo@gmail.com\",\n    \"password\": \"example123123\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/auth/login",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "579"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"243-TeheB86fX5eYEmUenS3t/gBKeuY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Dec 2022 22:22:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"lorenzo.benetollo@gmail.com\",\n    \"access_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImxvcmVuem8uYmVuZXRvbGxvQGdtYWlsLmNvbSIsImlhdCI6MTY3MTkyMDU2MywiZXhwIjoxNjcxOTIwNjIzfQ.Ord4BUUsr9CucNSYBCnyAc-EVXiiD1A4yX0Cqwx-SEHLppHo9P4MXsl_vYtD5yLWccYbwsCcDbz6LL0e0AU1vPHFGQHH9cFvuAkfxSkqGGMdhitreRUcpnDklBZXO9RLyg8XE9zhnbuO8A2vFFLAFFnMcXHHA5AfMFaNQmBwaqnBmlQoxpj0Pu3OZPG9oXA0kGZexuy6YHHOZkrYNgZa969vJnek4UwFIkiVk5bmNPDq9hnRVuf-P8GKQrYbJ_5yzEGc7G8p1RG71nlYbPfWx2-08NO1lFl-X3i6GHmF359Pdk5Blj70OrTF0ndtugct7BHd5Yq-KHaQE23DnV5tmQ\",\n    \"id\": \"ea1742ca-021d-42e0-96b4-d61a87e6fa7d\"\n}"
+						}
+					]
+				},
+				{
+					"name": "LOGIN PLAYER",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();",
+									"",
+									"pm.environment.set(\"player_token\", response.access_token);",
+									"pm.environment.set(\"player_id\", response.id);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"budino.trattore@gmail.com\",\n    \"password\": \"gelato123123\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LOGIN PLAYER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"budino.trattore@gmail.com\",\n    \"password\": \"gelato123123\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/auth/login",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "574"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23e-ECKYphfsui6c51PEfR2mig/d/XA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Dec 2022 22:21:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"budino.trattore@gmail.com\",\n    \"access_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJ1ZGluby50cmF0dG9yZUBnbWFpbC5jb20iLCJpYXQiOjE2NzE5MjA0ODQsImV4cCI6MTY3MTkyMDU0NH0.lg8KM_XUfie9gsOpaQjAAQgWLhVm3SFfwpB3Z00I9cNKP6aGcx_DrFHdcRCM6CjI55V-mbwe5SdCkOip2VQLUGLaR9BrfIa5BpTFYEb49BBwTlvn3uH9-JscLLl5aAojg-EvRjfnqhlZ-EITwS7M5A_U732Dt-VESA8fRJHFReq-9KpShtYE9Ysfm7iSQcQCn5srgzzhjfEPPSSO_e104NyZ6B0mxDusxS0rQwYPSQHbq_4kb5OYbR6IanTVSNpdRkzcBlK9JP-NjVptZ2Ie65XiHSlHpC6lxCuhKDxay4Ov9C57pKPtJ_QHNssD5R30FeIy_p-ckMXBAm2tullJ7Q\",\n    \"id\": \"9b6727bf-ae43-435f-bdd0-ab9022654c5f\"\n}"
+						}
+					]
+				},
+				{
+					"name": "LOGIN PLAYER 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();",
+									"",
+									"pm.environment.set(\"player2_token\", response.access_token);",
+									"pm.environment.set(\"player2_id\", response.id);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"test@gmail.com\",\n\t\"password\": \"test123123\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LOGIN PLAYER 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"test@gmail.com\",\n\t\"password\": \"test123123\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/auth/login",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "548"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"224-WPgYmKjLVzpGnCn9g9IZJEjNlsg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Dec 2022 22:22:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"test@gmail.com\",\n    \"access_token\": \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaWF0IjoxNjcxOTIwNTI3LCJleHAiOjE2NzE5MjA1ODd9.DjDt5sQBpwCiFWEpMn-dSzFjDpbO23KbQVwx-9tsNHrKczZITY9kiiUcvIQrWZ1aN-PaIDklHxC7IZFO8czgLhHx4yfrfMthgQLgQPEL7fWCEuXpqbDbIxN6QJdyvDQEXW8ASgZQmptW-cDkijltga0vhFrQ2sTrEhMwmdNwdBIsE9h3BdVCBgR7vJRYOrKfz0lAVqifRZNBSHiqUinROIn3N0cH4XUfGcHLx46zkIiht5SBsdnwblbF0BtB5wOYIxwqLvEHD5efR1HeH7yg7g0KGfMBY9KkKa3NrWkffJ-5SuN6IlMJiV6I9wB5HPbr9twtRMXFf7TD8MY684LCvQ\",\n    \"id\": \"7c7357a8-074d-48b5-81b5-d39a98d15e58\"\n}"
+						}
+					]
+				},
+				{
+					"name": "REGISTER ADMIN",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"lorenzo.benetollo@gmail.com\",\n\t\"password\": \"example123123\",\n\t\"name\": \"Lorenzo\",\n    \"username\": \"lollobene\",\n    \"avatar\" : \"none\",\n    \"description\" : \"none\",\n    \"secretKey\" : \"padel\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/auth/register",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "REGISTER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"lorenzo.benetollo@gmail.com\",\n\t\"password\": \"example123123\",\n\t\"name\": \"Lorenzo\",\n    \"username\": \"lollobene\",\n    \"avatar\" : \"none\",\n    \"description\" : \"none\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/auth/register",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-O7K3P2myU33D3F/GcRhFqoWh6+Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Dec 2022 20:47:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"User created with success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "REGISTER PLAYER",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"budino.trattore@gmail.com\",\n\t\"password\": \"gelato123123\",\n\t\"name\": \"Budino\",\n    \"username\": \"pizzagelato\",\n    \"avatar\" : \"gelato\",\n    \"description\" : \"w il gelato\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/auth/register",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "REGISTER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"lorenzo.benetollo@gmail.com\",\n\t\"password\": \"example123123\",\n\t\"name\": \"Lorenzo\",\n    \"username\": \"lollobene\",\n    \"avatar\" : \"none\",\n    \"description\" : \"none\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/auth/register",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-O7K3P2myU33D3F/GcRhFqoWh6+Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Dec 2022 20:47:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"User created with success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "REGISTER PLAYER 2",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"test@gmail.com\",\n\t\"password\": \"test123123\",\n\t\"name\": \"Tester\",\n    \"username\": \"testman\",\n    \"avatar\" : \"testAvatar\",\n    \"description\" : \"testDescription\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/auth/register",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "REGISTER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"lorenzo.benetollo@gmail.com\",\n\t\"password\": \"example123123\",\n\t\"name\": \"Lorenzo\",\n    \"username\": \"lollobene\",\n    \"avatar\" : \"none\",\n    \"description\" : \"none\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/auth/register",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-O7K3P2myU33D3F/GcRhFqoWh6+Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Dec 2022 20:47:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"User created with success\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "MATCHES",
+			"item": [
+				{
+					"name": "CREATE MATCH",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"dateTime\": \"2022-12-22:10:00:00\",\n\t\"location\": \"Padel Treviso\",\n\t\"creatorId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/matches",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"matches"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/matches",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"dateTime\": \"2022-12-22:10:00:00\",\n\t\"location\": \"Padel Treviso\",\n\t\"creatorId\": 1\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/matches",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"matches"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "256"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"100-ANitxVXLIJNEKXm3+mC7C2k3yVU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Dec 2022 19:35:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"dateTime\": \"2022-12-22:10:00:00\",\n    \"location\": \"Padel Treviso\",\n    \"creator\": {\n        \"id\": 1,\n        \"name\": \"Joey Goksu\",\n        \"email\": \"joey@reaktif.io\",\n        \"password\": \"$2a$10$m/snwoOcqySpEsUZwxI9m.HscATeuxqsy6cS.nlUE3jKORRViIeJ.\",\n        \"isActive\": true,\n        \"roles\": \"standard\"\n    },\n    \"result\": null,\n    \"id\": 3\n}"
+						}
+					]
+				},
+				{
+					"name": "ALL MATCHES",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/matches",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"matches"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/matches",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/matches",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"matches"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "165"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a5-HJoEyasrNNG1lwq9R9366zISM9o\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Dec 2022 19:39:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 3,\n        \"dateTime\": \"2022-12-22:10:00:00\",\n        \"location\": \"Padel Treviso\",\n        \"result\": \"\"\n    },\n    {\n        \"id\": 4,\n        \"dateTime\": \"2022-12-22:10:00:00\",\n        \"location\": \"Padel Treviso\",\n        \"result\": \"\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "USERS",
+			"item": [
+				{
+					"name": "ALL USERS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/users",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PLAYER INFO EDIT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{player_token}}",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Budinone\",\n    \"avatar\" : \"Pizza\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/users/{{player_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"users",
+								"{{player_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PLAYER INFO EDIT",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Budino\",\n    \"email\": \"budino.trattore@gmail.com\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/users/968ef052-481b-489b-97c2-6c7f01046f4c",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"users",
+										"968ef052-481b-489b-97c2-6c7f01046f4c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-mp76xueJwuBg6SC3F/3HJjTMrec\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Dec 2022 22:21:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"generatedMaps\": [],\n    \"raw\": [],\n    \"affected\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "PLAYER2 INFO EDIT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{player2_token}}",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Test\",\n    \"categories\" : \"platinum\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/users/{{player2_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"users",
+								"{{player2_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PLAYER INFO EDIT",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Budino\",\n    \"email\": \"budino.trattore@gmail.com\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/users/968ef052-481b-489b-97c2-6c7f01046f4c",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"users",
+										"968ef052-481b-489b-97c2-6c7f01046f4c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-mp76xueJwuBg6SC3F/3HJjTMrec\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Dec 2022 22:21:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"generatedMaps\": [],\n    \"raw\": [],\n    \"affected\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "PLAYER ADMIN EDIT",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"categories\" : \"diamond\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/users/{{player_id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"users",
+								"{{player_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PLAYER INFO EDIT",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"name\": \"Budino\",\n    \"email\": \"budino.trattore@gmail.com\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/users/968ef052-481b-489b-97c2-6c7f01046f4c",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"users",
+										"968ef052-481b-489b-97c2-6c7f01046f4c"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-mp76xueJwuBg6SC3F/3HJjTMrec\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Dec 2022 22:21:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"generatedMaps\": [],\n    \"raw\": [],\n    \"affected\": 1\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GENERAL",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response_200",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										""
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "any"
+						}
+					]
+				},
+				{
+					"name": "/health-check",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/health-check",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"health-check"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Response_200",
+							"originalRequest": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/health-check",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"health-check"
+									]
+								}
+							},
+							"code": 200,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "any"
+						}
+					]
+				},
+				{
+					"name": "PUBLIC ECHO",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "<<token>>",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\":\"val\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/echo",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"echo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "PUBLIC ECHO",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"key\":\"val\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/echo",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"echo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "13"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d-q9R0loQ0CAKBPLQTq5ZPyPGTOWI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Dec 2022 19:52:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"key\": \"val\"\n}"
+						}
+					]
+				},
+				{
+					"name": "PLAYER ECHO",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJ1ZGluby50cmF0dG9yZUBnbWFpbC5jb20iLCJpYXQiOjE2NzE3OTIxMjUsImV4cCI6MTY3MTc5MjE4NX0.mrV9fhzh9zBTzo94VksKKx1F7rP9wsVZffZBdPfEdCCbUptO8_09FoDubM-vGiosZ6GSPQTQtSzmeYi8eOO5lTvR-EzGqg7_TAj0nacPg2nMJxQ0KKXWU9E4C-EkeTzDxpKYA5KdnmMLgzNpIlPtTLJCBS6NBWQU4vsKDBRTXIOIujlM-IQt3wvtStbzjHw8TQZ5uaeB_B8ynzLkVuSfPkHJvH2_22F_1qQa4kJA9fTANV0SRq7OJo1nIwIyrqD0fKUzV-_8BFxuPyGm3Sn2pJS7bv0BVebnKKmem_NhArYU6BVIyxKDe82OWfsXdzxAC-8u6N6QaRg71G66qOFkCQ",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\":\"val\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/player-echo",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"player-echo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"key\":\"val\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/standard-echo",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"standard-echo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "13"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d-q9R0loQ0CAKBPLQTq5ZPyPGTOWI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Dec 2022 19:51:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"key\": \"val\"\n}"
+						}
+					]
+				},
+				{
+					"name": "ADIMN ECHO",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\" : \"val\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{base}}/admin-echo",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{base}}",
+								"admin-echo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Unauthorized Role",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{host}}:{{port}}/{{base}}/premium-echo",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"{{base}}",
+										"premium-echo"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45-T7Txzr/IRLfQ4TEPfbVWLpgje4Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Dec 2022 19:51:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 403,\n    \"message\": \"Forbidden resource\",\n    \"error\": \"Forbidden\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "0.0.0.0"
+		},
+		{
+			"key": "port",
+			"value": "3000",
+			"type": "string"
+		},
+		{
+			"key": "base",
+			"value": "api",
+			"type": "string"
+		}
+	]
+}
